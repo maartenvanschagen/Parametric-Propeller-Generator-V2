@@ -23,6 +23,9 @@
 /*    [Blades]    */
 ////////////////////
 
+//Rotation  --  true is clockwise, false is counterclockwise
+Clockwise = true;
+
 //Number of blades
 BladeNumber = 3;
 
@@ -239,16 +242,26 @@ module Blade()
 }
 
 // Main object
-difference()
-{
-    union()
+module main(){
+    difference()
     {
-            for(i = [0:BladeNumber-1])
+        union()
         {
-            rotate([90,0,i*360/BladeNumber])Blade();
-            rotate([0,0,i*360/BladeNumber])Hub();
-            //A hub piece is generated for each blade, but they are all merged
+            for(i = [0:BladeNumber-1])
+            {
+                rotate([90,0,i*360/BladeNumber])Blade();
+                rotate([0,0,i*360/BladeNumber])Hub();
+                //A hub piece is generated for each blade, but they are all merged
+            }
         }
+        Hubcutout();
     }
-    Hubcutout();
+}
+
+
+//Start drawing, mirror if needed
+if(!Clockwise){
+    mirror([1, 0, 0])main();
+}else{
+    main();
 }
