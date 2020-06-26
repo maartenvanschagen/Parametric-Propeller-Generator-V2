@@ -23,8 +23,8 @@
 /*    [Blades]    */
 ////////////////////
 
-//Rotation  --  true is clockwise, false is counterclockwise
-Clockwise = true;
+//Rotation  --  1 is clockwise, 0 is counterclockwise
+Clockwise = 1; // [0:false, 1:true]
 
 //Number of blades
 BladeNumber = 3;
