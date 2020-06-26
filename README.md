@@ -8,6 +8,7 @@ The trailing edge of the blades may be truncated by your slicer because it is to
 ## Parameters
 Customization is where this design shines. This propeller generator splits the propeller design up into many mathematical functions, allowing you to change everything about the design. But don't worry by default these functions are set by literal parameters to simplify and speed up the customization process.
 The following parameters can be set by the user, don't worry if you don't understand everything, the default values should work quite well.
+- Direction of rotation (clockwise or counterclockwise)
 - Number of blades
 - Blade Pitch (inches or mm)
 - Pitch adjustment factors
